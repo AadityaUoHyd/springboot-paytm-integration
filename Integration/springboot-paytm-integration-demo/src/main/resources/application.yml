@@ -1,0 +1,25 @@
+paytm:
+  mobile: #Fill your own mobile number here
+  email: #Fill your own email id here
+  payment:
+    sandbox:
+      merchantId: #Fill your own merchant id here, collect from paytm developer
+      merchantKey: #Fill your own merchant key here, collect from paytm developer
+      channelId: WEB
+      industryTypeId: Retail
+      website: WEBSTAGING
+      paytmUrl: https://securegw-stage.paytm.in/order/process
+      callbackUrl: http://localhost:9191/pgresponse
+      details:
+        MID: ${paytm.payment.sandbox.merchantId}
+        CHANNEL_ID: ${paytm.payment.sandbox.channelId}
+        INDUSTRY_TYPE_ID: ${paytm.payment.sandbox.industryTypeId}
+        WEBSITE: ${paytm.payment.sandbox.website}
+        CALLBACK_URL: ${paytm.payment.sandbox.callbackUrl}
+ 
+server:
+  port: 9191
+  
+logging:
+  level:
+    org.springframework.boot.autoconfigure: ERROR
